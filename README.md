@@ -1,5 +1,5 @@
 # AskBub
-Originally created to be a finetuned question answering bot for an e-sport tournament Discord, but I gave up getting coherent results from the simple Information Retrieval query system. Now it's just there to entertain people with how delusional the free trial model is.
+Originally created to be a task specific question answering bot for an e-sport tournament Discord, but I gave up getting coherent results from the simple Information Retrieval query system. Now it's just there to entertain people with how delusional the free trial model is.
 
 ## Getting Started
 1. Make sure you have set up a Discord Bot from the Discord Developer Portal and a Cohere account.
