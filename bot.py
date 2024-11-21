@@ -20,15 +20,21 @@ async def on_message(message):
         prompt = message.content.replace(f'<@{discord_client.user.id}>', '').strip()
         
         if prompt:
+            print(">> PROMPT:")
+            print(prompt)
             try:
                 response = cohere_client.generate(
                     model='command',
                     prompt=message.content,
-                    max_tokens=500
+                    max_tokens=2000
                 )
+                print(">> RESPONSE:")
                 print(response)
                 reply = response.generations[0].text
-                await message.channel.send(reply)
+
+                chunks = [reply[i:i+2000] for i in range(0, len(reply), 2000)]
+                for chunk in chunks:
+                    await message.channel.send(chunk)
             except Exception as e:
                 print(f"Error: {e}")
                 await message.channel.send("Sorry, I encountered an error. Please try again later.")
